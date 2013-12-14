@@ -7,7 +7,7 @@ import java.lang.String
 import scala.Predef.String
 import scala.language.implicitConversions
 
-trait MesssagePackSpec extends WordSpec with Matchers with GivenWhenThen with OptionValues with Resource with BeforeAndAfter {
+trait MesssagePackSpec extends WordSpec with Matchers with GivenWhenThen with OptionValues with BeforeAndAfter {
 
   implicit def toTag(t:String) = Tag(t)
 

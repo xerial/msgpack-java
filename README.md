@@ -1,0 +1,1 @@
+== For developersCompile```./sbt compile```Run tests```./sbt test```* Create IntelliJ project files```./sbt gen-idea```* Create Eclipse project files```./sbt eclipse```Public locally```./sbt publish-local```Publish to sonatype```./sbt publish```Public to local maven repo```./sbt publishM2```
