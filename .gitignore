@@ -3,7 +3,10 @@ target
 .project
 .classpath
 .settings
-.iml
+project
+*.iml
+.history
+.idea
 *~
 ._*
 .DS_Store
