@@ -12,7 +12,7 @@ import java.math.BigInteger;
 /**
 * Immutable float value implementation
 */
-public class FloatValueImpl extends AbstractValue implements FloatValue {
+public class FloatValueImpl extends AbstractValue implements ImmutableFloatValue {
     private final float value;
 
     public FloatValueImpl(float value) {

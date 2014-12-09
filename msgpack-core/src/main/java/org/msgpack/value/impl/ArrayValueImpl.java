@@ -1,11 +1,8 @@
 package org.msgpack.value.impl;
 
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.ArrayValue;
-import org.msgpack.value.Value;
+import org.msgpack.value.*;
 import org.msgpack.value.ValueType;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.ValueVisitor;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,17 +11,17 @@ import java.util.Iterator;
 /**
 * Immutable ArrayValue implementation
 */
-public class ArrayValueImpl extends AbstractValue implements ArrayValue {
-    private static ArrayValueImpl EMPTY = new ArrayValueImpl(new Value[0]);
+public class ArrayValueImpl extends AbstractValue implements ImmutableArrayValue {
+    private static ArrayValueImpl EMPTY = new ArrayValueImpl(new ImmutableValue[0]);
 
     public static ArrayValue empty() {
         return EMPTY;
     }
 
     private int cursor = 0;
-    private final Value[] array;
+    private final ImmutableValue[] array;
 
-    public ArrayValueImpl(Value[] array) {
+    public ArrayValueImpl(ImmutableValue[] array) {
         this.array = array;
     }
 

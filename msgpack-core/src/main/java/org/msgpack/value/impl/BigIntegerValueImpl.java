@@ -2,10 +2,7 @@ package org.msgpack.value.impl;
 
 import org.msgpack.core.MessageIntegerOverflowException;
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.IntegerValue;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -15,7 +12,7 @@ import static org.msgpack.core.Preconditions.checkNotNull;
 /**
  * Immutable BigIntegerValue implementation
  */
-public class BigIntegerValueImpl extends AbstractValue implements IntegerValue {
+public class BigIntegerValueImpl extends AbstractValue implements ImmutableIntegerValue {
 
     private final BigInteger value;
 

@@ -5,6 +5,7 @@ import org.msgpack.core.MessagePacker;
 import org.msgpack.core.MessageStringCodingException;
 import org.msgpack.core.buffer.MessageBuffer;
 import org.msgpack.value.BinaryValue;
+import org.msgpack.value.ImmutableRawValue;
 import org.msgpack.value.RawValue;
 import org.msgpack.value.Value;
 
@@ -15,7 +16,7 @@ import java.nio.charset.*;
 /**
 * Immutable RawValue implementation bas
 */
-public abstract class RawValueImpl extends AbstractValue implements RawValue {
+public abstract class RawValueImpl extends AbstractValue implements ImmutableRawValue {
 
     protected final ByteBuffer byteBuffer;
     private transient String decodedStringCache;

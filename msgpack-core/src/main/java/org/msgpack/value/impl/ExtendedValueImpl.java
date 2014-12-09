@@ -1,10 +1,7 @@
 package org.msgpack.value.impl;
 
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.ExtendedValue;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -12,7 +9,7 @@ import java.nio.ByteBuffer;
 /**
  * Extended value implementation
  */
-public class ExtendedValueImpl extends RawValueImpl implements ExtendedValue {
+public class ExtendedValueImpl extends RawValueImpl implements ImmutableExtendedValue {
 
     private final int type;
 

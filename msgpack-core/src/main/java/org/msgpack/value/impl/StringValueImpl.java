@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 /**
 * Immutable StringValue implementation
 */
-public class StringValueImpl extends AbstractValue implements StringValue {
+public class StringValueImpl extends AbstractValue implements ImmutableStringValue {
 
     private final String value;
 

@@ -2,10 +2,7 @@ package org.msgpack.value.impl;
 
 import org.msgpack.core.MessageIntegerOverflowException;
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.IntegerValue;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -13,7 +10,7 @@ import java.math.BigInteger;
 /**
 * Created on 5/30/14.
 */
-public class LongValueImpl extends AbstractValue implements IntegerValue {
+public class LongValueImpl extends AbstractValue implements ImmutableIntegerValue {
 
     private final long value;
 

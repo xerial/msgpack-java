@@ -3,10 +3,7 @@ package org.msgpack.value.impl;
 import org.msgpack.core.MessageFloatOverflowException;
 import org.msgpack.core.MessageOverflowException;
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.FloatValue;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -15,7 +12,7 @@ import java.math.BigInteger;
 /**
  * Immutable DoubleValue implementation
  */
-public class DoubleValueImpl extends AbstractValue implements FloatValue {
+public class DoubleValueImpl extends AbstractValue implements ImmutableFloatValue {
     private final double value;
 
     public DoubleValueImpl(double value) {

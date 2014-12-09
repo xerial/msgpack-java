@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 /**
 * Immutable raw string value implementation
 */
-public class RawStringValueImpl extends RawValueImpl implements StringValue {
+public class RawStringValueImpl extends RawValueImpl implements ImmutableStringValue {
 
     public RawStringValueImpl(ByteBuffer byteBuffer) {
         super(byteBuffer);

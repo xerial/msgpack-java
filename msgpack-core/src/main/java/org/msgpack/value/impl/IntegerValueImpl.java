@@ -11,7 +11,7 @@ import java.math.BigInteger;
 /**
 * IntegerValue implementation
 */
-public class IntegerValueImpl extends AbstractValue implements IntegerValue {
+public class IntegerValueImpl extends AbstractValue implements ImmutableIntegerValue {
 
     private final int value;
 

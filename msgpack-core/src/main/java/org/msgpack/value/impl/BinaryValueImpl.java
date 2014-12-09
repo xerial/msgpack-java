@@ -1,16 +1,13 @@
 package org.msgpack.value.impl;
 
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.BinaryValue;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.nio.ByteBuffer;
 
 /**
 * Created on 5/30/14.
 */
-public class BinaryValueImpl extends RawValueImpl implements BinaryValue {
+public class BinaryValueImpl extends RawValueImpl implements ImmutableBinaryValue {
     public BinaryValueImpl(ByteBuffer byteBuffer) {
         super(byteBuffer);
     }

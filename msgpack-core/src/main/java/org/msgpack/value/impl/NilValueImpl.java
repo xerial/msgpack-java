@@ -1,17 +1,14 @@
 package org.msgpack.value.impl;
 
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.NilValue;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 
 /**
 * Immutable NilValue implementation
 */
-public class NilValueImpl extends AbstractValue implements NilValue {
+public class NilValueImpl extends AbstractValue implements ImmutableNilValue {
 
     private static NilValue instance = new NilValueImpl();
 

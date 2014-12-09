@@ -1,17 +1,14 @@
 package org.msgpack.value.impl;
 
 import org.msgpack.core.MessagePacker;
-import org.msgpack.value.Value;
-import org.msgpack.value.ValueType;
-import org.msgpack.value.BooleanValue;
-import org.msgpack.value.ValueVisitor;
+import org.msgpack.value.*;
 
 import java.io.IOException;
 
 /**
 * Created on 5/30/14.
 */
-public class BooleanValueImpl extends AbstractValue implements BooleanValue {
+public class BooleanValueImpl extends AbstractValue implements ImmutableBooleanValue {
 
     public static BooleanValue TRUE = new BooleanValueImpl(true);
     public static BooleanValue FALSE = new BooleanValueImpl(false);
