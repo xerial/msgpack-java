@@ -49,7 +49,7 @@ public class MessagePackExample {
             .packArrayHeader(2)
             .packString("xxx-xxxx")
             .packString("yyy-yyyy");
-        packer.close();
+        packer.close(); // 1, "leo", ["xxx-xxxx", "yyy-yyyy"]
 
         // Deserialize with MessageUnpacker
         MessageUnpacker unpacker = MessagePack.newDefaultUnpacker(out.toByteArray());

@@ -10,8 +10,8 @@ import java.io.IOException;
 */
 public class BooleanValueImpl extends AbstractValue implements ImmutableBooleanValue {
 
-    public static BooleanValue TRUE = new BooleanValueImpl(true);
-    public static BooleanValue FALSE = new BooleanValueImpl(false);
+    public static ImmutableBooleanValue TRUE = new BooleanValueImpl(true);
+    public static ImmutableBooleanValue FALSE = new BooleanValueImpl(false);
 
     private final boolean value;
 
@@ -58,7 +58,7 @@ public class BooleanValueImpl extends AbstractValue implements ImmutableBooleanV
     }
 
     @Override
-    public BooleanValue toImmutable() {
+    public ImmutableBooleanValue toImmutable() {
         return this;
     }
 

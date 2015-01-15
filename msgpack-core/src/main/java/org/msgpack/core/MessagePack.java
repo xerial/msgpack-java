@@ -28,7 +28,6 @@ import static org.msgpack.core.Preconditions.checkArgument;
 
 /**
  * This class has MessagePack prefix code definitions and packer/unpacker factory methods.
- *
  */
 public class MessagePack {
 
@@ -49,15 +48,15 @@ public class MessagePack {
         private final int packerRawDataCopyingThreshold;
 
         public Config(
-                boolean readStringAsBinary,
-                boolean readBinaryAsString,
-                CodingErrorAction onMalFormedInput,
-                CodingErrorAction onUnmappableCharacter,
-                int maxUnpackStringSize,
-                int stringEncoderBufferSize,
-                int stringDecoderBufferSize,
-                int packerBufferSize,
-                int packerRawDataCopyingThreshold) {
+            boolean readStringAsBinary,
+            boolean readBinaryAsString,
+            CodingErrorAction onMalFormedInput,
+            CodingErrorAction onUnmappableCharacter,
+            int maxUnpackStringSize,
+            int stringEncoderBufferSize,
+            int stringDecoderBufferSize,
+            int packerBufferSize,
+            int packerRawDataCopyingThreshold) {
 
             checkArgument(packerBufferSize > 0, "packer buffer size must be larger than 0: " + packerBufferSize);
             checkArgument(stringEncoderBufferSize > 0, "string encoder buffer size must be larger than 0: " + stringEncoderBufferSize);
@@ -77,31 +76,49 @@ public class MessagePack {
         /**
          * allow unpackBinaryHeader to read str format family  (default:true)
          */
-        public boolean isReadStringAsBinary() { return readStringAsBinary; }
+        public boolean isReadStringAsBinary() {
+            return readStringAsBinary;
+        }
 
         /**
          * allow unpackRawStringHeader and unpackString to read bin format family (default: true)
          */
-        public boolean isReadBinaryAsString() { return readBinaryAsString; }
+        public boolean isReadBinaryAsString() {
+            return readBinaryAsString;
+        }
         /**
          * Action when encountered a malformed input
          */
-        public CodingErrorAction getActionOnMalFormedInput() { return onMalFormedInput; }
+        public CodingErrorAction getActionOnMalFormedInput() {
+            return onMalFormedInput;
+        }
         /**
          * Action when an unmappable character is found
          */
-        public CodingErrorAction getActionOnUnmappableCharacter() { return onUnmappableCharacter; }
+        public CodingErrorAction getActionOnUnmappableCharacter() {
+            return onUnmappableCharacter;
+        }
 
         /**
          * unpackString size limit. (default: Integer.MAX_VALUE)
          */
-        public int getMaxUnpackStringSize() { return maxUnpackStringSize; }
+        public int getMaxUnpackStringSize() {
+            return maxUnpackStringSize;
+        }
 
-        public int getStringEncoderBufferSize() { return stringEncoderBufferSize; }
-        public int getStringDecoderBufferSize() { return stringDecoderBufferSize; }
+        public int getStringEncoderBufferSize() {
+            return stringEncoderBufferSize;
+        }
+        public int getStringDecoderBufferSize() {
+            return stringDecoderBufferSize;
+        }
 
-        public int getPackerBufferSize() { return packerBufferSize; }
-        public int getPackerRawDataCopyingThreshold() { return packerRawDataCopyingThreshold; }
+        public int getPackerBufferSize() {
+            return packerBufferSize;
+        }
+        public int getPackerRawDataCopyingThreshold() {
+            return packerRawDataCopyingThreshold;
+        }
     }
 
     /**
@@ -123,15 +140,15 @@ public class MessagePack {
 
         public Config build() {
             return new Config(
-                    readStringAsBinary,
-                    readBinaryAsString,
-                    onMalFormedInput,
-                    onUnmappableCharacter,
-                    maxUnpackStringSize,
-                    stringEncoderBufferSize,
-                    stringDecoderBufferSize,
-                    packerBufferSize,
-                    packerRawDataCopyingThreshold
+                readStringAsBinary,
+                readBinaryAsString,
+                onMalFormedInput,
+                onUnmappableCharacter,
+                maxUnpackStringSize,
+                stringEncoderBufferSize,
+                stringDecoderBufferSize,
+                packerBufferSize,
+                packerRawDataCopyingThreshold
             );
         }
 
@@ -151,7 +168,7 @@ public class MessagePack {
             this.onUnmappableCharacter = action;
             return this;
         }
-        public ConfigBuilder maxUnpackStringSize(int size){
+        public ConfigBuilder maxUnpackStringSize(int size) {
             this.maxUnpackStringSize = size;
             return this;
         }
@@ -172,7 +189,6 @@ public class MessagePack {
             return this;
         }
     }
-
 
 
     /**
@@ -278,6 +294,7 @@ public class MessagePack {
 
     /**
      * Create a MessagePacker that outputs the packed data to the specified stream, using the default configuration
+     *
      * @param out
      * @return
      */
@@ -287,6 +304,7 @@ public class MessagePack {
 
     /**
      * Create a MessagePacker that outputs the packed data to the specified channel, using the default configuration
+     *
      * @param channel
      * @return
      */
@@ -296,6 +314,7 @@ public class MessagePack {
 
     /**
      * Create a MessageUnpacker that reads data from then given InputStream, using the default configuration
+     *
      * @param in
      * @return
      */
@@ -305,6 +324,7 @@ public class MessagePack {
 
     /**
      * Create a MessageUnpacker that reads data from the given channel, using the default configuration
+     *
      * @param channel
      * @return
      */
@@ -314,6 +334,7 @@ public class MessagePack {
 
     /**
      * Create a MessageUnpacker that reads data from the given byte array, using the default configuration
+     *
      * @param arr
      * @return
      */
@@ -324,6 +345,7 @@ public class MessagePack {
     /**
      * Create a MessageUnpacker that reads data form the given byte array [offset, .. offset+length), using the default
      * configuration.
+     *
      * @param arr
      * @param offset
      * @param length
@@ -336,6 +358,7 @@ public class MessagePack {
 
     /**
      * Create a MessagePacker that outputs the packed data to the specified stream
+     *
      * @param out
      */
     public MessagePacker newPacker(OutputStream out) {
@@ -344,6 +367,7 @@ public class MessagePack {
 
     /**
      * Create a MessagePacker that outputs the packed data to the specified channel
+     *
      * @param channel
      */
     public MessagePacker newPacker(WritableByteChannel channel) {
@@ -362,6 +386,7 @@ public class MessagePack {
 
     /**
      * Create a MessageUnpacker that reads data from the given ReadableByteChannel.
+     *
      * @param in
      */
     public MessageUnpacker newUnpacker(ReadableByteChannel in) {
@@ -380,6 +405,7 @@ public class MessagePack {
 
     /**
      * Create a MessageUnpacker that reads data from the given byte array [offset, offset+length)
+     *
      * @param arr
      * @param offset
      * @param length
@@ -387,8 +413,6 @@ public class MessagePack {
     public MessageUnpacker newUnpacker(byte[] arr, int offset, int length) {
         return new MessageUnpacker(new ArrayBufferInput(arr, offset, length), config);
     }
-
-
 
 
 }

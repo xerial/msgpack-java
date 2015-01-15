@@ -979,6 +979,7 @@ public class MessageUnpacker implements Closeable {
                         boolean endOfInput = (cursor + readLen) >= strLen;
                         CoderResult cr = decoder.decode(bb, decodeBuffer, endOfInput);
 
+                        // FIXME
                         if(endOfInput && cr.isUnderflow())
                             cr = decoder.flush(decodeBuffer);
 

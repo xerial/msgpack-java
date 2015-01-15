@@ -28,11 +28,11 @@ import java.nio.ByteBuffer;
  * Factory for creting Value instances
  */
 public class ValueFactory {
-    public static NilValue nilValue() {
+    public static ImmutableNilValue nilValue() {
         return NilValueImpl.getInstance();
     }
 
-    public static BooleanValue newBoolean(boolean v) {
+    public static ImmutableBooleanValue newBoolean(boolean v) {
         return v ? BooleanValueImpl.TRUE : BooleanValueImpl.FALSE;
     }
 
@@ -96,7 +96,7 @@ public class ValueFactory {
         if (list.isEmpty()) {
             return ArrayValueImpl.empty();
         }
-        Value[] array = list.toArray(new Value[list.size()]);
+        ImmutableValue[] array = list.toArray(new ImmutableValue[list.size()]);
         return new ArrayValueImpl(array);
     }
 

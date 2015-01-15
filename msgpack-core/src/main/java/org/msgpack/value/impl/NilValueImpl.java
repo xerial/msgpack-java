@@ -10,9 +10,9 @@ import java.io.IOException;
 */
 public class NilValueImpl extends AbstractValue implements ImmutableNilValue {
 
-    private static NilValue instance = new NilValueImpl();
+    private static ImmutableNilValue instance = new NilValueImpl();
 
-    public static NilValue getInstance() {
+    public static ImmutableNilValue getInstance() {
         return instance;
     }
 

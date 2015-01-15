@@ -261,7 +261,7 @@ public class MessageBuffer {
 
 
     /**
-     * Create a MessageBuffer instance from an java heap array
+     * Create a MessageBuffer instance from a java heap array
      * @param arr
      */
     MessageBuffer(byte[] arr) {
